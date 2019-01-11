@@ -1,0 +1,39 @@
+
+*{
+font-family: cursive;
+background: linear-gradient(to left, #33ccff 0%, #ccff33 100%);
+}
+
+#score{
+	margin-top: 70px;
+	background: rgb(170, 170, 170);
+    border: 2px solid rgba(0,100,10,1);
+    border-radius: 5px;
+    color: black;
+	position: relative;
+	}
+#snake{
+	height: 500px;
+	width: 500px;
+	border: 1px solid royalblue;
+	border-radius: 4px;
+}
+#pause{
+	background: linear-gradient(to left, #ee8e10 0%, #ccff33 100%);
+	text-align: center;
+	width: 500px;
+	margin: auto;
+	font-size: 25px;
+}
+#level{
+	float: left;
+	position: absolute;
+    width: 200px;
+    margin-top: 250px;
+	margin-left: 200px;
+}
+#level p{
+	width: 200px;
+	margin: 0px;
+	font-size: 20px;
+}
