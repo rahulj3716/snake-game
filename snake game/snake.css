@@ -37,3 +37,15 @@ background: linear-gradient(to left, #33ccff 0%, #ccff33 100%);
 	margin: 0px;
 	font-size: 20px;
 }
+#inst{
+	float: left;
+	position: absolute;
+    width: 200px;
+    margin-top: 400px;
+	margin-left: 150px;
+}
+#inst p{
+	width: 200px;
+	margin: 0px;
+	font-size: 20px;
+}
