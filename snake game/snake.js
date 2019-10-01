@@ -123,13 +123,17 @@ function direction(event)
 }
 let startCheck = false,startCheck1= false;
 let gameStatus,gameStatus1;
+
+let x;
 document.addEventListener("keydown",(evt)=>{
     if(!startCheck && evt.code =="Space")
     {   gameStatus = setInterval(draw,180);
         startCheck = true; 
         gameStatus1 = setInterval(draw1,180);
         startCheck1 = true;
+
         var x = setInterval(time,1000);
+
     }
     else if(evt.code === "Space" )
     {    clearInterval(gameStatus);
@@ -250,15 +254,20 @@ function draw()
        else if (snakex == 500 && snakey>=200 && snakey <=300) 
                  newhead.x = 0; 
         else if(newhead.x <=-15 || newhead.x >19*box|| newhead.y <=-15 || newhead.y >19*box || collision(newhead,snake)){
-             clearInterval(gameStatus1);
-            clearInterval(gameStatus);
-           // clearInterval(x);
-        dead.play();
-        
+   
         ctx.strokeStyle = "black";
         ctx.font = "24px Arial";
-        ctx.strokeText("P2 WINS: PRESS ENTER TO RESTART",8,200);
+        ctx.strokeText(" PRESS ENTER TO RESTART",50,200);
           let gameover = true;
+            clearInterval(gameStatus1);
+            clearInterval(gameStatus);
+            score1+=2;
+           
+         context.clearRect(450,10,100,60);
+         context.font = "30px Arial";
+         context.fillText(score1, 460, 35);
+            dead.play();
+       
     for(let i=0;i<snake1.length;i++)
     { ctx.lineWidth = 1.5;
     ctx.fillStyle = (i==0) ? "black" : "white";
@@ -396,10 +405,19 @@ else if(newhead1.x <-10 || newhead1.x >19*box|| newhead1.y <=-15 || newhead1.y >
     dead.play();    
     clearInterval(gameStatus);
         clearInterval(gameStatus1);
+rahulj3716-patch-1
         clearInterval(x);
          ctx.strokeStyle = "black";
         ctx.font = "24px Arial";
         ctx.strokeText("P1 WINS: PRESS ENTER TO RESTART",8,200);
+         score+=2;
+         
+         context.clearRect(75,10,100,60);
+         context.font = "30px Arial";
+         context.fillText(score, 80, 35);
+         ctx.strokeStyle = "black";
+        ctx.font = "30px Arial";
+        ctx.strokeText(" PRESS ENTER TO RESTART",50,200);
           let gameover1 = true;
       }
     snake1.unshift(newhead1);
